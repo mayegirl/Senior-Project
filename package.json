@@ -1,0 +1,22 @@
+{
+  "name": "cs341-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayegirl/cs341-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayegirl/cs341-node/issues"
+  },
+  "homepage": "https://github.com/mayegirl/cs341-node#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
