@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Poststage Packages</title>
+        <script src="calculateRate.js"></script>
+    </head>
+    <body>
+        <form action="/getRate">
+            <p>Weight of Package <input type="number" onkeypress="return event.charCode > 48" min="1"></p>
+            <div>
+                <p>Select Mail Type</p>
+                <label><input id="stamped" type="radio" value="1" name="radio"> Letters (Stamped)</label>
+                <br>
+                <label><input id="metered" type="radio" value="2" name="radio"> Letters (Metered)</label>
+                <br>
+                <label><input id="envelopes" type="radio" value="3" name="radio"> Large Envelopes (Flats)</label>
+                <br>
+                <label><input id="firstClass" type="radio" value="4" name="radio"> First-Class Package Service-Retail</label>
+                <br><br>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
