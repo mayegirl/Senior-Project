@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Property Search</title>
+    </head>
+    <body>
+        <div class="table-data">
+            <h2>Property Search</h2>
+            <table border="1">
+                <tr>
+                    <th>Property ID</th>
+                    <th>Title</th>
+                    <th>City ID</th>
+                    <th>Estate ID</th>
+                    <th>Floor Space</th>
+                    <th>Balconies</th>
+                    <th>Balconie Space</th>
+                    <th>Bedrooms</th>
+                    <th>Bathrooms</th>
+                    <th>Garages</th>
+                    <th>Total Parking Spaces</th>
+                    <th>Pets?</th>
+                    <th>Washer/Dryer</th>
+                    <th>Refrigerator</th>
+                    <th>Oven</th>
+                    <th>Study</th>
+                    <th>Description</th>
+                    </tr>
+                    <%
+                        if(userData.length!=0){
+                        var i=1;
+                        userData.forEach(function(data){
+                    %>
+                    <tr>
+                    <td><%=i; %></td>
+                    <td><%=data.estate_name %></td>
+            <td><%=data.city_id %></td>
+            <td><%=data.estate_type_id %></td>
+            <td><%=data.floor_space %></td>
+            <td><%=data.number_of_balconies %></td>
+            <td><%=data.balconies_space %></td>
+            <td><%=data.number_of_bedrooms %></td>
+            <td><%=data.number_of_bathrooms %></td>
+            <td><%=data.number_of_garages %></td>
+            <td><%=data.number_of_parking_spaces %></td>
+            <td><%=data.pets_allowed %></td>
+            <td><%=data.washer_dryer %></td>
+            <td><%=data.refrigerator %></td>
+            <td><%=data.oven %></td>
+            <td><%=data.study %></td>
+            <td><%=data.estate_description %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
