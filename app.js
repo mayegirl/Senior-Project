@@ -3,7 +3,7 @@
 const express = require('express')
 const PORT = process.env.PORT || 3306
 const path = require('path')
-var usersRouter = require('routes/users.js');
+//var usersRouter = require('routes/users.js');
 
 express()
     .use(express.static(path.join(__dirname, 'public')))
