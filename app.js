@@ -6,7 +6,6 @@ const path = require('path')
 var usersRouter = require('routes/users.js');
 
 express()
-    .use('/users', usersRouter)
     .use(express.static(path.join(__dirname, 'public')))
     .set('view engine', 'ejs')
     .set('views', path.join(__dirname, 'views'))
