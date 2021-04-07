@@ -42,7 +42,7 @@ let template_table_body = {
     ]
 }
 
-function writeHTMLfromJSON(jsonFile){
+function writeHTMLfromJSON(){
     let data = jsonFile;
     let table_header = json2html.transform(data[0], template_table_header);
     let table_body = json2html.transform(data, template_table_body);
