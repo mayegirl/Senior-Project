@@ -39,7 +39,7 @@ let template_table_body = {
 }
 
 function writeHTMLfromJSON(){
-    let data = '../private/database.json';
+    let data = 'private\database.json';
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
