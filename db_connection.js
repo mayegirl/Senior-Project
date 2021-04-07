@@ -1,6 +1,6 @@
 const json2html = require('node-json2html')
 const fs = require('fs');
-const url = require('private\\database.json');
+const jsonFile = require('private/database.json');
 
 let template_table_header = {
     "<>" : "tr", "html": [
@@ -42,9 +42,7 @@ let template_table_body = {
     ]
 }
 
-writeHTMLfromJSON(url, 'public\\main.html')
-
-function writeHTMLfromJSON(jsonFile, htmlTableFile){
+function writeHTMLfromJSON(jsonFile){
     let data = jsonFile;
     let table_header = json2html.transform(data[0], template_table_header);
     let table_body = json2html.transform(data, template_table_body);
@@ -54,12 +52,13 @@ function writeHTMLfromJSON(jsonFile, htmlTableFile){
     body = '<body>' + body + '</body>'
 
     let html = header + body + '</html>';
-    
+
     fs.readFile('private\\database.json', (err, data) => {
     if (err) throw err;
     let database = JSON.parse(data);
     console.log(database);
-});
+    });
 
-console.log('This is after the read call');
+    console.log('This is after the read call');
+    document.getElementById('display').innerHTML = html;
 }
