@@ -10,6 +10,6 @@ express()
     .set('view engine', 'ejs')
     .set('views', path.join(__dirname, 'views'))
     .get('/', function (req, res) {res.sendFile(__dirname + '/public/main.html')})
-  /*  .get('/user-list', function (req, res) {res.render(usersRouter)})
-   */ .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+    .get('/user-list', function (req, res) {res.render(usersRouter)})
+    .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
