@@ -1,6 +1,5 @@
-const json2html = require('node-json2html')
 const fs = require('fs');
-const jsonFile = require('private/database.json');
+const jsonFile = require('../private/database.json');
 
 let template_table_header = {
     "<>" : "tr", "html": [
@@ -44,8 +43,8 @@ let template_table_body = {
 
 function writeHTMLfromJSON(){
     let data = jsonFile;
-    let table_header = json2html.transform(data[0], template_table_header);
-    let table_body = json2html.transform(data, template_table_body);
+    let table_header = (data[0], template_table_header);
+    let table_body = (data, template_table_body);
 
     let header = '<!DOCTYPE html' + 'html lang="en">\n' + '<head><title>Property Database</title></head>'
     let body = '<h1>Available Houses</h1><br><table id="my_table">\n<thead>' + table_header + '\\n</thead>\\n<tbody>\\n' + table_body + '\\n</tbody>\\n</table>'
