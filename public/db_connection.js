@@ -1,6 +1,3 @@
-const fs = require('fs');
-const jsonFile = require('../private/database.json');
-
 let template_table_header = {
     "<>" : "tr", "html": [
     {"<>": "th", "html": "Title"},
@@ -42,22 +39,15 @@ let template_table_body = {
 }
 
 function writeHTMLfromJSON(){
-    let data = jsonFile;
-    let table_header = (data[0], template_table_header);
-    let table_body = (data, template_table_body);
+    let data = '../private/database.json';
 
-    let header = '<!DOCTYPE html' + 'html lang="en">\n' + '<head><title>Property Database</title></head>'
-    let body = '<h1>Available Houses</h1><br><table id="my_table">\n<thead>' + table_header + '\\n</thead>\\n<tbody>\\n' + table_body + '\\n</tbody>\\n</table>'
-    body = '<body>' + body + '</body>'
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("display").innerHTML = this.responseText;
+    }
+    };
+    xhttp.open("GET", data, true);
+    xhttp.send();
 
-    let html = header + body + '</html>';
-
-    fs.readFile('private\\database.json', (err, data) => {
-    if (err) throw err;
-    let database = JSON.parse(data);
-    console.log(database);
-    });
-
-    console.log('This is after the read call');
-    document.getElementById('display').innerHTML = html;
 }
