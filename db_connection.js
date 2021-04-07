@@ -1,15 +1,9 @@
-//opens a connection to my database.
+const fs = require('fs');
 
-const db = require('mysql')
-var conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'loganmsmith897@gmail.com',
-    password: 'LittleDeer2013',
-    database: 'propertyDB'
-});
-
-conn.connect(function(err) {
+fs.readFile('private\\database.json', (err, data) => {
     if (err) throw err;
-    console.log('Databse is connected successfully!');
+    let database = JSON.parse(data);
+    console.log(database);
 });
-module.exports = conn;
+
+console.log('This is after the read call');
