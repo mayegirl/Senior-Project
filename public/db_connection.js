@@ -19,7 +19,7 @@ function writeHTMLfromJSON(){
         document.getElementById("display").innerHTML = txt;
     }
     };
-    xhttp.open("GET", 'C:\Users\logan\cs341-project\private\database.json', true);
+    xhttp.open("GET", '/private/database.json', true);
     xhttp.send();
 
 }
